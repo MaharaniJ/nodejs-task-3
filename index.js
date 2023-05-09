@@ -3,8 +3,8 @@ const app = express();
 const mongodb = require("mongodb");
 const mongoClient = mongodb.MongoClient;
 const dotenv = require("dotenv").config();
-const URL = process.env.DB;
-const DB = "Student_Teacher";
+const URL = process.env.URL;
+const DB = "Student_Mentor";
 app.listen(process.env.PORT || 3001);
 
 //middleware
@@ -16,7 +16,7 @@ app.get('/',function(req,res){
 //api for create mentor
 app.post('/mentor',async function(req,res){
     try{
-        const connection = await mongoClient.connect(URL);
+    const connection = await mongoClient.connect(URL);
     const db = connection.db(DB);
     await  db.collection("mentors").insertOne(req.body);
     await connection.close();
