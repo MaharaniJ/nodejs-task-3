@@ -1,0 +1,9 @@
+backend-deployment:
+site:vercel.com:
+signup with github account
+import repository from:add github repository
+install vercel in github
+vercel.com/dashboard
+addnew:
+project
+.env
